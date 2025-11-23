@@ -84,7 +84,7 @@ export default function PersonalGallery() {
                   <FaRegTrashAlt
                     className={styles['DeleteIcon']}
                     onClick={(e, id = el._id, index = i) => {
-                      deletePost('http://localhost:3001/main/cPic', id)
+                      deletePost(`${process.env.VITE_API_URL}/main/cPic`, id)
                       yourGalleryPosts.splice(index, 1)
                       setGalleryPosts(yourGalleryPosts)
                       setPosts(yourGalleryPosts)
@@ -113,7 +113,7 @@ export default function PersonalGallery() {
                     <FaRegTrashAlt
                       className={styles['DeleteIcon']}
                       onClick={(e, id = arr[i + 1]._id, index = i + 1) => {
-                        deletePost('http://localhost:3001/main/cPic', id)
+                        deletePost(`${process.env.VITE_API_URL}/main/cPic`, id)
                         yourGalleryPosts.splice(index, 1)
                         setGalleryPosts([...yourGalleryPosts])
                       }}

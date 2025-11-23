@@ -5,7 +5,7 @@ export async function checkAuth() {
     return false
   }
 
-  const response = await fetch('http://localhost:3001/check-auth', {
+  const response = await fetch(`${process.env.VITE_API_URL}/check-auth`, {
     headers: {
       Authorization: ` ${token}`,
       credentials: 'include',

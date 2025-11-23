@@ -1,5 +1,7 @@
 import UserRequests from '../../assets/functions/userRequests.js'
 import { Navigate } from 'react-router'
+import dotenv from 'dotenv'
+
 export const handleLogin = async (loginName, loginPassword, nav) => {
   const userData = {
     username: loginName,
@@ -8,7 +10,7 @@ export const handleLogin = async (loginName, loginPassword, nav) => {
 
   try {
     const res = await UserRequests.addUser(
-      'http://localhost:3001/login',
+      `${process.env.VITE_API_URL}/login`,
       userData,
     )
     if (res.userId) {
@@ -29,7 +31,7 @@ export const handleRegister = async (username, email, password, nav) => {
 
   try {
     const res = await UserRequests.addUser(
-      'http://localhost:3001/register',
+      `${process.env.VITE_API_URL}/register`,
       userData,
     )
     nav('/main/cPic')

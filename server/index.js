@@ -23,7 +23,7 @@ function sanitizeMongoUri(uri = '') {
 const mongoUri = sanitizeMongoUri(process.env.MONGO_URI)
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://pixel-artist-rho.vercel.app',
     credentials: true,
     exposedHeaders: ['Authorization', 'refresh-token', 'userid', 'username'],
   }),
