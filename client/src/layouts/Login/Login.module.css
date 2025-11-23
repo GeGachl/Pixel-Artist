@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+input {
+  backdrop-filter: blur(2px);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  font-family: 'Lexend', sans-serif;
+  background: linear-gradient(45deg, #c859ff 0%, #ffab8c 100%);
+  color: white;
+  padding-right: 20%;
+}
+
+.FormImage {
+  height: 100%;
+  aspect-ratio: 2/3;
+  display: block;
+  background-image: url('./pixel_art_vectorized_clean.svg');
+  background-size: cover;
+  border-right: #c96cbd2d 10px solid;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.FormImage div {
+  height: 100%;
+  width: 100%;
+}
+
+.RedirectContainer {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  gap: 3%;
+  margin-top: 5%;
+  font-weight: 400;
+}
+
+.RedirectContainer > a {
+  color: rgb(56, 132, 218);
+}
+
+.tooltip {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff7b7b;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 1000;
+  width: 400px;
+  transition: 0.5s;
+}
+
+.input-container {
+  position: relative;
+  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.eye {
+  width: 35px;
+  height: 35px;
+}
+
+.container-for-eye {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  width: 400px;
+  height: 60px;
+  background: rgba(255, 216, 143, 0.8) !important;
+  color: white;
+  font-size: 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.link {
+  width: 300px;
+  height: 50px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+  transition: 0.3s;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+.forlink {
+  display: flex;
+  gap: 10px;
+}
+
+.login-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 30px;
+}
+
+.enter-container {
+  width: 50%;
+  height: 100%;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.line {
+  width: 2px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.695);
+}
+
+
+.loading {
+  width: 100%;
+  height: 100%;
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.h1 {
+  margin-bottom: 45px;
+  font-size: 40px;
+}
+
+.btnLogin {
+  width: 400px;
+  height: 60px;
+  background: rgba(255, 216, 143, 0.8) !important;
+  color: white;
+  font-size: 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+@media (min-width: 1440px) {
+  .FormImage {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .FormImage {
+    width: 45%;
+  }
+}
+
+@media (min-width: 768px) {
+  .FormImage {
+    width: 45%;
+  }
+}
+
+@media (max-width: 767px) {
+  .FormImage {
+    display: none;
+  }
+  .login-container {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25%;
+  }
+  .container-for-eye {
+    margin-left: 7.5%;
+  }
+  .enter-container {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25%;
+  }
+}
+
+@media (max-width: 690px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-container {
+    transform: scale(0.65);
+    gap: 30px;
+    font-size: 19px;
+  }
+  .enter-container {
+    transform: scale(0.65);
+    gap: 30px;
+    font-size: 19px;
+  }
+  .h1 {
+    font-size: 55px;
+  }
+  .btn {
+    position: absolute;
+    margin-top: 500px;
+  }
+  .btnLogin {
+    position: absolute;
+    margin-top: 280px;
+  }
+  .RedirectContainer {
+    margin-top: 60px;
+  }
+  .tooltip {
+    font-size: 17px;
+  }
+}
+
+@media (min-height: 608px) {
+  input {
+    margin: -10px auto;
+  }
+  .login-container {
+    margin-bottom: 40px;
+  }
+}

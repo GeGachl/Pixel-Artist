@@ -1,0 +1,219 @@
+
+.container {
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  z-index: 2;
+  text-transform: uppercase;
+  text-shadow: 0px -5px black;
+  cursor: default;
+  user-select: none;
+  z-index: 5;
+  white-space: nowrap;
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+
+.sections {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  z-index: 1;
+}
+
+
+#create {
+  background: linear-gradient(135deg, rgba(131, 58, 180, 1), rgb(235, 10, 164));
+  text-shadow: 0px -5px black;
+  grid-area: 1 / 1 / 2 / 3;
+}
+#animate {
+  background: linear-gradient(225deg, rgba(255, 0, 85, 1), rgba(255, 0, 43, 1));
+  text-shadow: 0px -5px black;
+}
+#yourGallery {
+  background: linear-gradient(225deg, #e4a13d, #f59607 60%);
+  text-shadow: 0px -5px black;
+  grid-area: 2 / 1 / 3 / 2;
+}
+#globalGallery {
+  background: linear-gradient(315deg, #1fc43e 60%, #5cc568);
+  text-shadow: 0px -5px black;
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+
+#create:hover {
+  transform: scale(1.1);
+  z-index: 3;
+}
+
+.sections:hover {
+  transform: scale(1.12);
+  z-index: 3;
+}
+
+a {
+  text-decoration: none;
+  color: #edf1f4;
+}
+span {
+  text-shadow: none !important;
+}
+
+@media (max-width: 1024px) {
+  .sections {
+    font-size: 55px;
+  }
+  #create {
+    font-size: 62px;
+  }
+}
+
+@media (max-width: 875px) {
+  .title {
+    font-size: 55px;
+  }
+  .sections {
+    font-size: 45px;
+  }
+  #create {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 680px) {
+  .title {
+    font-size: 50px;
+  }
+  .sections {
+    font-size: 40px;
+  }
+  #create {
+    font-size: 47px;
+  }
+}
+
+@media (max-width: 590px) {
+  .title {
+    font-size: 45px;
+  }
+  .sections {
+    font-size: 35px;
+  }
+  #create {
+    font-size: 47px;
+  }
+}
+
+@media (max-width: 510px) {
+  .title {
+    font-size: 42px;
+  }
+  .sections {
+    font-size: 30px;
+  }
+  #create {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 440px) {
+  .title {
+    text-shadow: 0 -4px black;
+  }
+  .sections {
+    font-size: 28px;
+  }
+  #create {
+    font-size: 48px;
+  }
+  #yourGallery {
+    text-shadow: 0 -3px black;
+  }
+  #globalGallery {
+    text-shadow: 0 -3px black;
+  }
+}
+
+@media (max-width: 410px) {
+  .title {
+    text-shadow: 0 -4px black;
+  }
+  .sections {
+    font-size: 24px;
+  }
+  #create {
+    font-size: 45px;
+  }
+  #yourGallery {
+    text-shadow: 0 -3px black;
+  }
+  #globalGallery {
+    text-shadow: 0 -3px black;
+  }
+}
+
+@media (max-width: 350px) {
+  .title {
+    text-shadow: 0 -4px black;
+    font-size: 38px;
+  }
+  .sections {
+    font-size: 23px;
+  }
+  #create {
+    font-size: 50px;
+  }
+  #yourGallery {
+    text-shadow: 0 -3px black;
+  }
+  #globalGallery {
+    text-shadow: 0 -3px black;
+  }
+}
+
+@media (max-width: 320px) {
+  .title {
+    font-size: 35px;
+    text-shadow: 0 -3px black;
+  }
+  .sections {
+    font-size: 20px;
+  }
+  #create {
+    font-size: 39px;
+    text-shadow: 0 -3px black;
+  }
+  #yourGallery {
+    text-shadow: 0 -3px black;
+  }
+  #globalGallery {
+    text-shadow: 0 -3px black;
+  }
+}

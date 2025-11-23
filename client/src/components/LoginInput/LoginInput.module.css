@@ -1,0 +1,17 @@
+.input {
+  background: transparent;
+  border: none;
+  padding: 0;
+  height: 50px;
+  color: rgba(255, 255, 255, 0.8);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  outline: none;
+  width: 400px;
+  font-size: 25px;
+  rotate: 0deg !important;
+}
+
+::placeholder {
+  color: white;
+}
