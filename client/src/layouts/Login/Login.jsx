@@ -31,6 +31,7 @@ function Login() {
   const nav = useNavigate()
 
   const submit = async (e) => {
+    console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
     e.preventDefault()
     setLoading(true)
     const res = await apiFetch('/login', {
