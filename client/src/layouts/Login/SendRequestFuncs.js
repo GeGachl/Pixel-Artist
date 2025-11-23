@@ -2,6 +2,7 @@ import UserRequests from '../../assets/functions/userRequests.js'
 import { Navigate } from 'react-router'
 
 export const handleLogin = async (loginName, loginPassword, nav) => {
+  console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
   const userData = {
     username: loginName,
     password: loginPassword,
