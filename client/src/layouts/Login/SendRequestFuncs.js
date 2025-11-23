@@ -1,6 +1,5 @@
 import UserRequests from '../../assets/functions/userRequests.js'
 import { Navigate } from 'react-router'
-import dotenv from 'dotenv'
 
 export const handleLogin = async (loginName, loginPassword, nav) => {
   const userData = {
@@ -10,7 +9,7 @@ export const handleLogin = async (loginName, loginPassword, nav) => {
 
   try {
     const res = await UserRequests.addUser(
-      `${process.env.VITE_API_URL}/login`,
+      `${import.meta.env.VITE_API_URL}/login`,
       userData,
     )
     if (res.userId) {
@@ -31,7 +30,7 @@ export const handleRegister = async (username, email, password, nav) => {
 
   try {
     const res = await UserRequests.addUser(
-      `${process.env.VITE_API_URL}/register`,
+      `${import.meta.env.VITE_API_URL}/register`,
       userData,
     )
     nav('/main/cPic')
