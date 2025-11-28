@@ -23,7 +23,7 @@ export default function LoadLayout() {
         <NavLink
           className={styles['sections']}
           id={styles['globalGallery']}
-          to={'/main/gallery'}
+          to={'/main/globalGallery'}
         >
           All Gallery <span>🌐</span>
         </NavLink>
