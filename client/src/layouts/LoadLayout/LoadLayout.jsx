@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router'
 import styles from './LoadLayout.module.css'
-
+import { Analytics } from "@vercel/analytics/react";
 export default function LoadLayout() {
   return (
     <div className={styles['container']}>
@@ -28,6 +28,7 @@ export default function LoadLayout() {
           All Gallery <span>🌐</span>
         </NavLink>
       </div>
+      <Analytics />
     </div>
   )
 }
