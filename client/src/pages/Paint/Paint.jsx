@@ -1138,8 +1138,8 @@ export default function Paint() {
         ></canvas>
         <canvas
           id="overlay"
-          width="640"
-          height="640"
+          width={CanvasWidth}
+          height={CanvasHeight}
           style={{ position: 'absolute', pointerEvents: 'none' }}
         ></canvas>
       </div>
