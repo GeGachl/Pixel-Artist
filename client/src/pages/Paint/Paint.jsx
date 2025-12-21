@@ -138,8 +138,18 @@ export default function Paint() {
   const canvasRef = useRef(null)
   const allKeys = {}
   useEffect(() => {
-    const canvas = canvasRef.current
+    function syncCanvasSize() {
+      const canvasEl = canvasRef.current;
+      if (!canvasEl) return;
+      const realWidth = canvasEl.offsetWidth;
+      const realHeight = canvasEl.offsetHeight;
+      if (CanvasWidth !== realWidth) setCanvasWidth(realWidth);
+      if (CanvasHeight !== realHeight) setCanvasHeight(realHeight);
+    }
+    window.addEventListener('resize', syncCanvasSize);
+    syncCanvasSize();
 
+    const canvas = canvasRef.current
     const context = canvas.getContext('2d')
     const overlay = document.getElementById('overlay')
     const overlayCtx = overlay.getContext('2d')
@@ -151,6 +161,7 @@ export default function Paint() {
     overlayCtx.fillRect(0, 0, canvas.width, canvas.height)
     setOverlayCtx(overlayCtx)
     setCtx(context)
+    return () => window.removeEventListener('resize', syncCanvasSize);
   }, [])
 
   useEffect(() => {
@@ -1116,8 +1127,8 @@ export default function Paint() {
             setDrawing(false)
           }}
           id="draw"
-          width={`${CanvasWidth}px`}
-          height={`${CanvasHeight}px`}
+          width={CanvasWidth}
+          height={CanvasHeight}
           style={{
             backgroundImage: `url("data:image/svg+xml,${encodedSvg}")`,
             backgroundSize: `${pixelSize * 4}px ${pixelSize * 4}px`,
