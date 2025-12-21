@@ -12,10 +12,10 @@ const { ACCESS_SECRET, REFRESH_SECRET, ACCESS_EXPIRES, REFRESH_EXPIRES } =
 
 function signTokens(userId) {
   const accessToken = jwt.sign({ userId }, ACCESS_SECRET, {
-    expiresIn: ACCESS_EXPIRES,
+    expiresIn: "1d",
   })
   const refreshToken = jwt.sign({ userId }, REFRESH_SECRET, {
-    expiresIn: REFRESH_EXPIRES,
+    expiresIn: "7d",
   })
   return { accessToken, refreshToken }
 }
