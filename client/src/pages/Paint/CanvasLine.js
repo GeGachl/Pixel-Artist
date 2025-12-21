@@ -3,10 +3,12 @@ const overlay = document.getElementById('overlay')
 const ctx = canvas.getContext('2d')
 const overlayCtx = overlay.getContext('2d')*/
 function getPixelCoords(e, canvas, pixelSize) {
-  const rect = canvas.getBoundingClientRect()
-  const x = Math.floor((e.clientX - rect.left) / pixelSize)
-  const y = Math.floor((e.clientY - rect.top) / pixelSize)
-  return { x, y }
+  const rect = canvas.getBoundingClientRect();
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+  const x = Math.floor(((e.clientX - rect.left) * scaleX) / pixelSize);
+  const y = Math.floor(((e.clientY - rect.top) * scaleY) / pixelSize);
+  return { x, y };
 }
 
 export function hexToRgba(hex, alpha) {
