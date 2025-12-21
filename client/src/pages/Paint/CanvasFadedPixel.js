@@ -8,8 +8,10 @@ export default function drawPixelWithNoise(
   pixelSizeModify,
 ) {
   const rect = canvas.getBoundingClientRect()
-  const x = Math.floor((e.clientX - rect.left) / pixelSize)
-  const y = Math.floor((e.clientY - rect.top) / pixelSize)
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+  const x = Math.floor(((e.clientX - rect.left) * scaleX) / pixelSize);
+  const y = Math.floor(((e.clientY - rect.top) * scaleY) / pixelSize);
 
   const radius = Math.floor(pixelSizeModify / 2.2)
 

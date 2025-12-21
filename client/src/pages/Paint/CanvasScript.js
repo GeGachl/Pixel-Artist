@@ -10,8 +10,10 @@ export default function drawPixel(
   pixelSizeModify,
 ) {
   const rect = canvas.getBoundingClientRect()
-  const x = Math.floor((e.clientX - rect.left) / pixelSize) * pixelSize
-  const y = Math.floor((e.clientY - rect.top) / pixelSize) * pixelSize
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+  const x = Math.floor(((e.clientX - rect.left) * scaleX) / pixelSize) * pixelSize;
+  const y = Math.floor(((e.clientY - rect.top) * scaleY) / pixelSize) * pixelSize;
 
   if (isErasing) {
     //ctx.clearRect(x, y, pixelSize, pixelSize)
